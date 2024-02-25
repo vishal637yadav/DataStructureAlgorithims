@@ -16,31 +16,30 @@
 A Collection represents a single unit of objects, i.e., a group.
 
 
-What is a framework in Java
-It provides readymade architecture.
-It represents a set of classes and interfaces.
-It is optional.
-What is Collection framework
-The Collection framework represents a unified architecture for storing and manipulating a group of objects. It has:
+## What is a framework in Java
+* It provides readymade architecture.
+* It represents a set of classes and interfaces.
+* It is optional.
 
-Interfaces and its implementations, i.e., classes
-Algorithm
-
-
-ADVERTISEMENT
+## What is Collection framework
+The Collection framework represents a unified architecture for storing and manipulating a group of objects.
+### Collection framework Contains:
+* Interfaces and its implementations, i.e., classes
+* Algorithm
 
 Do You Know?
-What are the two ways to iterate the elements of a collection?
-What is the difference between ArrayList and LinkedList classes in collection framework?
-What is the difference between ArrayList and Vector classes in collection framework?
-What is the difference between HashSet and HashMap classes in collection framework?
-What is the difference between HashMap and Hashtable class?
-What is the difference between Iterator and Enumeration interface in collection framework?
-How can we sort the elements of an object? What is the difference between Comparable and Comparator interfaces?
-What does the hashcode() method?
-What is the difference between Java collection and Java collections?
-Hierarchy of Collection Framework
-Let us see the hierarchy of Collection framework. The java.util package contains all the classes and interfaces for the Collection framework.
+* What are the two ways to iterate the elements of a collection?
+* What is the difference between ArrayList and LinkedList classes in collection framework?
+* What is the difference between ArrayList and Vector classes in collection framework?
+* What is the difference between HashSet and HashMap classes in collection framework?
+* What is the difference between HashMap and Hashtable class?
+* What is the difference between Iterator and Enumeration interface in collection framework?
+* How can we sort the elements of an object? What is the difference between Comparable and Comparator interfaces?
+* What does the hashcode() method?
+* What is the difference between Java collection and Java collections?
+* Hierarchy of Collection Framework
+
+* Let us see the hierarchy of Collection framework. The java.util package contains all the classes and interfaces for the Collection framework.
 
 Hierarchy of Java Collection framework
 Methods of Collection interface
@@ -66,6 +65,7 @@ No.	Method	Description
 17	default Spliterator<E> spliterator()	It generates a Spliterator over the specified elements in the collection.
 18	public boolean equals(Object element)	It matches two collections.
 19	public int hashCode()	It returns the hash code number of the collection.
+
 Iterator interface
 Iterator interface provides the facility of iterating the elements in a forward direction only.
 Methods of Iterator interface
