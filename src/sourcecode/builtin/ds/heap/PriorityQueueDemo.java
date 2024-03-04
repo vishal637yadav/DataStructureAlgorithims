@@ -11,6 +11,7 @@ public class PriorityQueueDemo {
         System.out.println("------------:--:Creating Max Heap:--:--Default----");
 
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        System.out.println("minHeap.peek()   :: " + minHeap.peek() + ", minHeap          :: " + minHeap);
         System.out.println("minHeap.add(40)  :: " + minHeap.add(40));
         System.out.println("minHeap.peek()   :: " + minHeap.peek() + ", minHeap          :: " + minHeap);
         System.out.println("minHeap.add(50)  :: " + minHeap.add(50));
@@ -28,7 +29,7 @@ public class PriorityQueueDemo {
 
         System.out.println("------------:--:Creating Max Heap:--:------------");
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
-
+        System.out.println("maxHeap.peek()   :: " + maxHeap.peek() + ", maxHeap          :: " + maxHeap);
         System.out.println("maxHeap.add(40)  :: " + maxHeap.add(40));
         System.out.println("maxHeap.peek()   :: " + maxHeap.peek() + ", maxHeap          :: " + maxHeap);
         System.out.println("maxHeap.add(50)  :: " + maxHeap.add(50));
