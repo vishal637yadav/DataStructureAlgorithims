@@ -49,7 +49,6 @@ Lots of data leads to :
 > * Depends on their implementation that they are linearly stored of Non-Linearly Stored.
 
 ## Categorization of Data Structures :
-![img](https://github.com/vishal637yadav/DataStructureAlgorithims/tree/master/src/document/image/Data-Structure-Categories.png)
-
+![img](https://github.com/vishal637yadav/DataStructureAlgorithims/blob/master/src/document/image/Data-Structure-Categories.png)
 
 
