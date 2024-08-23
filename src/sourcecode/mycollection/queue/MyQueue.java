@@ -25,7 +25,8 @@ public class MyQueue<E> implements Queue<E>{
     public void enQueue(E data) {
         Node<E> newNode = new Node<>(data);
 
-        if(tail == null){
+        //if Queue isEmpty
+        if(isEmpty()){
             tail = newNode;
             head = tail;
         }else{
@@ -38,26 +39,22 @@ public class MyQueue<E> implements Queue<E>{
 
     @Override
     public E deQueue() {
-        //edge-cases : 1. when queue is empty() size = 0;
-        //             2. when queue is size = 1
-        //             3. when queue is size > 2
+        // edge-cases 1: when queue is empty() size = 0;
         if(isEmpty()) {
             return null;
         }
 
         Node<E> deletedNode = head;
-
+        // edge-cases 2: when queue is size = 1
         if(!isEmpty() && size == 1){
-            deletedNode = head;
             head = null;
             tail = null;
+        // edge-cases 3: when queue is size > 2
         }else {
-            deletedNode = head;
             head = head.next;
             head.prev = null;
         }
         size--;
-
         return deletedNode.data;
     }
 
@@ -92,12 +89,19 @@ public class MyQueue<E> implements Queue<E>{
 
     public static void main(String[] args) {
         MyQueue<Integer> myQueue = new MyQueue<>();
+        System.out.println("---------enQueue : Operation--------------");
+        System.out.println("calling1 enQueue :"+myQueue);
         myQueue.enQueue(1);
+        System.out.println("calling2 enQueue:"+myQueue);
         myQueue.enQueue(2);
+        System.out.println("calling3 enQueue:"+myQueue);
         myQueue.enQueue(3);
+        System.out.println("calling4 enQueue:"+myQueue);
         myQueue.enQueue(4);
+        System.out.println("calling5 enQueue:"+myQueue);
+
         //myQueue.enQueue(5);
-        System.out.println("-----------------------");
+        System.out.println("---------deQueue : Operation--------------");
         System.out.println(myQueue);
         System.out.println("calling1 deQueue :"+myQueue.deQueue());
         System.out.println("after dequeue:"+myQueue);
