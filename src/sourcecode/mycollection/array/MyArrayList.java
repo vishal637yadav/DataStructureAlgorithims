@@ -1,32 +1,39 @@
 package sourcecode.mycollection.array;
 
-import java.util.Arrays;
-
-/**
- * @noinspection unchecked
- */
 public class MyArrayList<E> implements List<E> {
 
     private Object[] dataArray;
     private int size;
-    private static int DEFAULT_ARRAY_SIZE = 10;
+    private static int DEFAULT_CAPACITY = 10;
 
 
     public MyArrayList() {
-        dataArray = new Object[DEFAULT_ARRAY_SIZE];
+        dataArray = new Object[DEFAULT_CAPACITY];
     }
 
+    public MyArrayList(int initialCapacity) {
+        dataArray = new Object[initialCapacity];
+    }
 
     @Override
     public void add(E element) {
-        if (size < DEFAULT_ARRAY_SIZE) {
+        if (size < DEFAULT_CAPACITY) {
             dataArray[size] = element;
             size++;
         } else {
-            throw new IndexOutOfBoundsException("Array Already Full");
-
-
+            //throw new IndexOutOfBoundsException("Array Already Full");
+            growCapacity(size);
+            dataArray[size] = element;
+            size++;
         }
+    }
+
+    private void growCapacity(int size){
+        int newCapacity = 2*size;
+        System.out.println(newCapacity);
+        Object [] newDataArray = new Object[newCapacity];
+        System.arraycopy(dataArray,0,newDataArray,0,size-1);
+        dataArray=newDataArray;
     }
 
     @Override
@@ -102,7 +109,7 @@ public class MyArrayList<E> implements List<E> {
 
     // Shift the element towards right after deletion.
     private void fastRemove(int index){
-        System.arraycopy(dataArray, index + 1, dataArray, index, size - index);
+        System.arraycopy(dataArray, index + 1, dataArray, index, size - index-1);
     }
 
     @Override
@@ -144,6 +151,9 @@ public class MyArrayList<E> implements List<E> {
         integerMyArrayList.add(70);
         integerMyArrayList.add(80);
         integerMyArrayList.add(90);
+        integerMyArrayList.add(100);
+        integerMyArrayList.add(410);
+        integerMyArrayList.add(530);
 
         System.out.println(integerMyArrayList);
         System.out.println(integerMyArrayList.get(8));
@@ -152,8 +162,10 @@ public class MyArrayList<E> implements List<E> {
         System.out.println(integerMyArrayList);
         System.out.println("remove ::"+integerMyArrayList.remove(5));
         System.out.println(integerMyArrayList);
-        integerMyArrayList.clear();
+        //integerMyArrayList.clear();
         System.out.println(integerMyArrayList);
+
+        integerMyArrayList.growCapacity(10);
 
 
     }
