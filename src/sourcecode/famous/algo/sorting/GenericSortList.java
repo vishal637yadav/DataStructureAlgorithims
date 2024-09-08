@@ -2,6 +2,7 @@ package sourcecode.famous.algo.sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class GenericSortList<T extends Comparable<T>> {
@@ -27,6 +28,19 @@ public class GenericSortList<T extends Comparable<T>> {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size - i - 1; j++) {
                 if (dataList.get(j).compareTo(dataList.get(j + 1)) > 0) {
+                    T oldValueAtJthIndex = dataList.set(j, dataList.get(j + 1));
+                    dataList.set(j + 1, oldValueAtJthIndex);
+                }
+            }
+        }
+    }
+
+    //Bubble sort Implementation
+    public static <T> void  bubbleSort(List<T> dataList, Comparator<? super T> comparator) {
+        int size = dataList.size();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                if (comparator.compare(dataList.get(j), dataList.get(j + 1)) > 0) {
                     T oldValueAtJthIndex = dataList.set(j, dataList.get(j + 1));
                     dataList.set(j + 1, oldValueAtJthIndex);
                 }
@@ -100,7 +114,12 @@ public class GenericSortList<T extends Comparable<T>> {
         System.out.println("after  bubbleSort()         studentList::" + studentList);
         studentList.sortUsingCollectionSort();
         System.out.println("after  Collections.sort()   studentList::" + studentList);
+        //studentList.dataList.sort(new SortStudentByRollNoAsc());
+        System.out.println("after  SortStudentByRollNoAsc()   studentList::" + studentList);
+        bubbleSort(studentList.dataList, new SortStudentByRollNoAsc());
+        System.out.println("after  bubbleSort(studentList.dataList, new SortStudentByRollNoAsc())   studentList::" + studentList);
         System.out.println("------------createStudentSortedList--ends--------------------");
+
     }
 
     public static void main(String[] args) {
