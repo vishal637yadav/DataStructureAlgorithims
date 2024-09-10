@@ -23,13 +23,18 @@ public class ComparableDemo1 {
 
         @Override
         public int compareTo(Pair a) {
+            /*
+            int r;
             //if the string are not equal
-            if (this.x.compareTo(a.x) != 0) {
-                return this.x.compareTo(a.x);
+            if ( ( r = this.x.compareTo(a.x)) != 0) {
+                return r;
             } else {
                 //we compare int values if the strings are equal
                 return this.y - a.y;
             }
+            */
+            int r;
+            return (( r = this.x.compareTo(a.x)) != 0)?r:this.y - a.y;
         }
     }
 
