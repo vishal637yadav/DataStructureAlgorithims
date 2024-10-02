@@ -2,6 +2,7 @@
 
 * Java Build-in Data Structures (**Collection Framework**)
 * [Heap (Java PriorityQueue)](./src/document/md/Heap-DataStructure.md)
+* [Breadth First Search(BFS)](./src/document/md/Breadth-First-Search-BFS.md)
 
 ---
 * Bit-Manipulation
